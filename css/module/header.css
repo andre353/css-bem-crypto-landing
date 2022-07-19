@@ -1,0 +1,41 @@
+.header {
+  position: relative;
+  background-color: #ffffff;
+  z-index: 2; /* при раскрытии меню быть поверх нижеследующей секции */
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #ffffff; /* иначе transparent и header__navigation будет просвечивать,когда оно будет "прятаться" при z-index: -1 */
+}
+
+.header__nav-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header__nav-btn {
+    display: block;
+    background-color: transparent;
+    border: 0;
+    line-height: 0; /*избавляемся от отступа в svg */ 
+  }
+
+  .header__navigation {
+    position: absolute;
+    bottom: 0;
+    left: 0; /* растягиваем */ 
+    right: 0; /* на ширину всего экрана */
+    z-index: -1; /* как только уберем translateY(100%) этот элемент скроется - встанет за header, у которого z-index: 1 - он впереди */
+    background-color: #ffffff;
+    transition: transform .36s ease-in-out;
+  }
+
+  .header__navigation_open {
+    transform: translateY(100%); /* спускаем за border и margin of header as it's relative */
+  }
+}

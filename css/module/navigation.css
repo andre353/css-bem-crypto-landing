@@ -1,0 +1,35 @@
+.navigation__list {
+  display: flex;
+  align-items: center;
+}
+
+.navigation__item {
+  margin-right: 43px;
+}
+
+.navigation__item:last-child {
+  margin-right: 0px;
+}
+
+@media (max-width: 768px) {
+  .navigation__list {
+    padding: 16px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navigation__list {
+    padding: 16px 15px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navigation__item {
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+
+  .navigation__item:last-child {
+    margin-bottom: 0px;
+  }
+}

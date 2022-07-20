@@ -1,4 +1,5 @@
 .hero {
+  background-color:black; /* на случай, если картинка не загрузится */
   background-image: url('../../image/banner.jpg');
   background-position: center center;
   background-repeat: no-repeat;
@@ -42,6 +43,7 @@
   width: 232px;
   height: 39px;
   background-color: #55C2FF;
+  border: 0;
   border-radius: 8px;
 }
 
@@ -90,11 +92,11 @@
   }
 
   .hero__subtitle {
+    max-width: 230px;
     margin-bottom: 25px;
   }
 
   .hero__btn {
-    font-weight: 500;
     font-size: 12px;
     line-height: 15px;
     text-align: center;

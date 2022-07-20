@@ -26,6 +26,7 @@ button {
 a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 
 ul {
@@ -42,6 +43,36 @@ h1, h2, h3, p {
   max-width: 1240px; /* сам контейнер 1180px */
   margin: 0 auto;
   padding: 0 30px;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0; /* top:0; left: 0; right: 0; bottom: 0; */
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  overflow-y: auto; /* при развороте телефона страницу нужно скролить*/
+  overflow-x: hidden; /* по горизонтали скролить не будем */
+  opacity: 0;
+  visibility: hidden; /* можем кликать сквозь мод окно*/
+  transition-property: opacity, visibility;
+  transition-duration: .36s;
+  transition-timing-function: ease-in-out;
+  white-space: nowrap; /* для псевдоэлемента .overlay:after, чтобы новые блоки не переносились */
+  text-align: center; /* по горизонтали вся форма отцентруется */
+}
+
+.overlay:after {
+  content: '';
+  display: inline-block;
+  vertical-align: middle; /* т.к. этот элемент будет четко по центру, и сместиться не сможет из-за того, что у overlay св-во white-space: nowrap;, то и родитель - само окно не сможет сместиться с центра */
+  height: 100%;
+}
+
+/* открываем окно */
+.overlay_open {
+  opacity: 1;
+  visibility: visible;
 }
 
 @media (max-width: 1024px) {

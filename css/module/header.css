@@ -36,6 +36,6 @@
   }
 
   .header__navigation_open {
-    transform: translateY(100%); /* спускаем за border и margin of header as it's relative */
+    transform: translateY(calc(100% - 1px)); /* спускаем за border и margin of header as it's relative */
   }
 }

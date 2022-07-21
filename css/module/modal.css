@@ -7,9 +7,10 @@
   white-space: normal;
   visibility: hidden;
   opacity: 0;
-  transition: opacity .36s ease-in-out, visibility .36s ease-in-out;
   max-width: 688px;
   width: 97%; /*когда будет сжиматься экран < 688px, займет весь экран*/
+  transition-property: opacity, visibility;
+  transition-timing-function: ease-in-out;
 }
 
 .modal_open {

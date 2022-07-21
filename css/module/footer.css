@@ -76,7 +76,7 @@
 
 @media (max-width: 1024px) {
   .footer__container {
-    grid-template-columns: 2fr 4fr 2fr;
+    grid-template-columns: 2fr 6fr;
   }
   .footer-navigation__item {
     margin-left: -13px;
